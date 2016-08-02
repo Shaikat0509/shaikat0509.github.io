@@ -1,0 +1,19 @@
+{
+  "name": "agg",
+  "description": "Baby HTML templete or Wordpress theme structure.",
+  "main": "gulpfile.js",
+  "author": ["Shariful"],
+  "license": "MIT",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6"
+  }
+}

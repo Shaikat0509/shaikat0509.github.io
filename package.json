@@ -1,0 +1,25 @@
+{
+  "name": "agg",
+  "version": "1.0.0",
+  "description": "Baby HTML templete or Wordpress theme structure.",
+  "main": "gulpfile.js",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssmin": "^0.1.7",
+    "gulp-header": "^1.7.1",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "shariful.com",
+  "author": "Shariful",
+  "license": "MIT"
+}

@@ -1,0 +1,68 @@
+// Contextual backgrounds
+
+.bg-white {
+	@include bg-variant($brand-dark, $brand-white);
+}
+.bg-black {
+	@include bg-variant($brand-white, $brand-black);
+}
+
+.bg-light {
+	@include bg-variant($brand-dark, $brand-light);
+}
+.bg-dark {
+	@include bg-variant($brand-white, $brand-dark);
+}
+
+
+.bg-primary {
+	@include bg-variant($brand-white, $brand-primary);
+}
+.bg-info {
+	@include bg-variant($brand-white, $brand-info);
+}
+
+// @each $color in $array-brand {
+// 	// get the color
+//   $get-color: map-get($brand-colors, $color);
+//   .bg-#{$color} {
+//     @include bg-variant($get-color);
+//   }
+// }
+
+
+// Contextual text
+
+.text-white {
+	@include text-variant($brand-white);
+}
+
+.text-black {
+	@include text-variant($brand-black);
+}
+
+@each $color in $array-brand {
+	// get the color
+  $get-color: map-get($brand-colors, $color);
+  .text-#{$color} {
+    @include text-variant($get-color);
+  }
+}
+
+// Border
+
+.b-white{border-color: $brand-white}
+
+@each $color in $array-brand {
+	// get the color
+  $get-color: map-get($brand-colors, $color);
+  .b-#{$color} {
+    @include border-variant($get-color);
+  }
+}
+
+// img
+
+.img-bg.img-dark::after {
+	background: #212121;
+}

@@ -1,0 +1,52 @@
+// The dropdown menu (ul)
+$dropdown-border-color: #cacaca;
+
+.dropdown-menu {
+  font-size: $font-size-xs;
+  border-radius: $border-radius-base !important;
+  padding: 13px 0;
+  border-color: lighten($dropdown-border-color, 5%);;
+  box-shadow: 0 0 30px rgba(0,0,0,.15);
+  > li > a {
+    line-height: $line-height-base;
+    color: darken($text-muted, 15%);;
+    padding: 6px 25px;
+    &:hover,
+    &:focus,
+    &:active {
+      // color: $brand-white;
+      background-color: $brand-light;
+    }
+  }
+  .divider {
+    margin: 10px 0;
+  }
+}
+
+.dropdown-header{
+  padding: 0 0 10px;
+}
+
+.dropdown-menu > .arrow,
+.dropdown-menu > .arrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 8px;
+  content: "";
+}
+.dropdown-menu > .top.arrow {
+  right: 12px;
+  border-top-width: 0;
+  border-bottom-color: $dropdown-border-color;
+  top: -8px;
+}
+.dropdown-menu > .top.arrow:after {
+  content: " ";
+  margin-left: -8px;
+  border-top-width: 1px;
+  border-bottom-color: white;
+}

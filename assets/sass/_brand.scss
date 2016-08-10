@@ -1,0 +1,38 @@
+
+// pswp pswp--supports-fs pswp--open pswp--notouch pswp--css_animation pswp--svg pswp--zoom-allowed pswp--visible pswp--animated-in pswp--has_mouse
+// pswp pswp--supports-fs pswp--open pswp--notouch pswp--css_animation pswp--svg pswp--zoom-allowed pswp--visible pswp--animated-in pswp--has_mouse pswp--fs
+
+.pswp__scroll-wrap {
+  position: relative;
+  display: inline-block;
+  float: left;
+  width: -webkit-calc(100% - 300px);
+  width: -moz-calc(100% - 300px);
+  width: calc(100% - 300px);
+  z-index: 99;
+}
+
+.sidebar_region {
+  position: relative;
+  display: block;
+  height: 100%;
+  .photo_sidebar {
+    display: inline-block;
+    width: 300px;
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    background-color: #f7f8fa;
+    // border: solid 1px red;
+    overflow-y: scroll;
+  }
+}
+
+.pswp--fs {
+  .pswp__scroll-wrap {
+    width: 100%;
+  }
+  .sidebar_region {
+    display: none;
+  }
+}

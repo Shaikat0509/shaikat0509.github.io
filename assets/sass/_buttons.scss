@@ -1,0 +1,67 @@
+.btn {
+  font-weight: 400;
+  border-radius: $btn-border-radius;
+  outline: 0 !important;
+  padding: 12px 30px;
+  &-xs {
+    padding: 6px 15px;
+    font-size: $font-size-xs;
+  }
+  &-sm {
+    padding: 8px 20px;
+    font-size: $font-size-sm;
+  }
+  &-lg {
+    padding: 16px 40px;
+    font-size: $font-size-md;
+  }
+
+  // btn-action
+  &.btn-like {
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    // background-color: rgba(0, 0, 0, 0.3);
+    color: $brand-white;
+    background-color: $brand-primary;
+  }
+  &.btn-share {
+    
+  }
+}
+
+.btn-default {
+  @include button-variant($brand-dark, $brand-light, $brand-light);
+}
+
+.btn-dark {
+  @include button-variant($brand-white, $brand-dark, $brand-dark);
+}
+
+.btn-black {
+  @include button-variant($brand-white, $brand-black, $brand-black);
+}
+
+.btn-primary {
+  @include button-variant($brand-white, $brand-primary, $brand-primary);
+}
+
+.btn-info {
+  @include button-variant($brand-white, $brand-info, $brand-info);
+}
+
+// .btn-white {
+//   @include button-variant($text-color, $brand-white, $brand-white);
+// }
+
+// .btn-black {
+//   @include button-variant($brand-black, $brand-black, $brand-black);
+// }
+
+// @each $color in $array-brand {
+//   // get the color
+//   $get-color: map-get($brand-colors, $color);
+//   .btn-#{$color} {
+//     @include button-variant($get-color, $get-color, $get-color);
+//   }
+// }

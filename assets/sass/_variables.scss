@@ -1,0 +1,95 @@
+//== Colors
+
+$brand-white:               #ffffff;
+$brand-black:               #000000;
+
+$brand-light:               #f3f3f3;
+$brand-dark:                #222222;
+
+$brand-primary:             #2dac66;
+$brand-info:                #ff548d;
+$brand-success:             #60bf53;
+$brand-warning:             #dd6c5f;
+$brand-danger:              #ff3040;
+
+$brand-colors: (
+  light:                    $brand-light,
+  dark:                     $brand-dark,
+  primary:                  $brand-primary,
+  info:                     $brand-info,
+  success:                  $brand-success,
+  warning:                  $brand-warning,
+  danger:                   $brand-danger
+);
+
+$array-brand:               light, dark,
+                            primary, info, success, warning, danger;
+
+//== Scaffolding
+
+$body-bg:                   $brand-white;
+$text-color:                $brand-dark;
+$text-muted:                #aaaaa9;  // 818181
+
+$link-color:                $brand-dark;
+$link-hover-color:          $brand-black;
+
+//== Typography
+
+$font-family-sans-serif:    "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif:         Georgia, "Times New Roman", Times, serif;
+//** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
+$font-family-monospace:     Menlo, Monaco, Consolas, "Inconsolata", monospace;
+$font-family-base:          $font-family-sans-serif;
+
+$font-size-base:            14px;
+$font-size-lg:              ceil(($font-size-base * 1.50));  // ~21px
+$font-size-md:              ceil(($font-size-base * 1.14));  // ~16px
+$font-size-sm:              ceil(($font-size-base * 0.91));  // ~13px
+$font-size-xs:              ceil(($font-size-base * 0.85));  // ~12px
+$font-size-xxs:             ceil(($font-size-base * 0.75));  // ~10px
+
+$font-size-h1:              floor(($font-size-base * 2.6));  // ~36px
+$font-size-h2:              floor(($font-size-base * 2.15)); // ~30px
+$font-size-h3:              ceil(($font-size-base * 1.7));   // ~24px
+$font-size-h4:              ceil(($font-size-base * 1.5));   // ~21px
+$font-size-h5:              ceil(($font-size-base * 1.25));  // ~18px
+$font-size-h6:              $font-size-base;                 // ~14px
+
+$line-height-base:          1.5;
+$line-height-computed:      floor(($font-size-base * $line-height-base)); // ~20px
+
+$letter-spacing-base:       0.03em;
+
+$headings-font-family:      $font-family-sans-serif;
+$headings-font-weight:      700;
+$headings-line-height:      1.3;
+$headings-color:            inherit;
+
+$border-radius-base:        3px;
+$border-color:              rgba(0, 0, 0, 0.05);
+
+$nav-bg:                  lighten($brand-light, 3%);
+$nav-active:              $brand-primary;
+
+// buttons
+$btn-default-color:       $text-color;
+$btn-default-bg:          lighten($brand-light, 3%);
+$btn-default-border:      $border-color;
+$btn-border-radius:       $border-radius-base;
+
+// aide > wrapper, padding, margin
+$case-size-1x:            1;
+$case-size-2x:            2;
+$case-size-xxs:           3;
+$case-size-xs:            5;
+$case-size-sm:            10;
+$case-size-base:          15; //base
+$case-size-md:            20;
+$case-size-lg:            25;
+$case-size-xl:            30;
+$case-size-xxl:           50;
+
+//== Components
+
+//== Forms

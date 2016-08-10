@@ -1,0 +1,349 @@
+
+// define array
+$hyphen: '-';
+$negative: 'n-';
+$array-sizes:    (1x   $case-size-1x)
+                 (2x   $case-size-2x)
+                 (xxs  $case-size-xxs)
+                 (xs   $case-size-xs)
+                 (sm   $case-size-sm)
+                 (base $case-size-base)
+                 (md   $case-size-md)
+                 (lg   $case-size-lg)
+                 (xl   $case-size-xl)
+                 (xxl  $case-size-xxl);
+
+// wrapper padding margin
+$array-names:    (wrapper   padding          null)
+                 (p-l       padding-left     null)
+                 (p-t       padding-top      null)
+                 (p-r       padding-right    null)
+                 (p-b       padding-bottom   null)
+                 (p-v       padding-top      padding-bottom)
+                 (p-h       padding-left     padding-right)
+                 (m-l       margin-left      null)
+                 (m-t       margin-top       null)
+                 (m-r       margin-right     null)
+                 (m-b       margin-bottom    null)
+                 (m-v       margin-top       margin-bottom)
+                 (m-h       margin-left      margin-right);
+
+@each $target-name in $array-names {
+    $conc : nth($target-name, 1);
+    $prop1: nth($target-name, 2);
+    $prop2: nth($target-name, 3);
+    @if $conc == m-l {
+      .m-none {
+        margin: 0 !important; } }
+    .#{$conc}-none {
+      #{$prop1}: 0 !important;
+      @if $prop2 != null {
+        #{$prop2}: 0 !important; } }
+
+    @each $target-size in $array-sizes {
+      $size: nth($target-size, 1);
+      $px  : nth($target-size, 2);
+      @if $size != base {$hyphen: '-';$negative: 'n-';}
+      @else{$hyphen: '';$size: null;$negative: '-n';}
+      .#{$conc}#{$hyphen}#{$size} {
+          #{$prop1}: #{$px}px;
+          @if $prop2 != null {
+            #{$prop2}: #{$px}px; } }
+      @if $conc == m-l or $conc == m-t or $conc == m-r or $conc == m-b or $conc == m-v or $conc == m-h {
+        .#{$conc}#{$hyphen}#{$negative}#{$size} {
+            #{$prop1}: -#{$px}px;
+            @if $prop2 != null {
+              #{$prop2}: -#{$px}px; } } } } }
+
+
+//  Width
+.w-1x{width: 10px}
+.w-2x{width: 20px}
+.w-3x{width: 30px}
+.w-4x{width: 40px}
+.w-xxs{width: 60px}
+.w-xs{width: 90px}
+.w-sm{width: 150px}
+.w{width: 200px}
+.w-md{width: 240px}
+.w-lg{width: 280px}
+.w-xl{width: 320px}
+.w-xxl{width: 360px}
+.w-full{width: 100%}
+.w-auto{width: auto}
+
+// Height
+.h-xs{height: $case-size-xs + px}
+.h-1x{height: 10px}
+.h-2x{height: 20px}
+.h-3x{height: 30px}
+.h-4x{height: 40px}
+.h-full{height: 100%}
+.h-auto{height: auto}
+
+.r {
+  border-radius: 500px;
+  overflow: hidden;
+}
+
+// Avatar
+.avatar{
+  position: relative;
+  display: block;
+  border-radius: 500px;
+  white-space: nowrap;
+  img{
+    border-radius: 500px;
+    width: 100%;
+  }
+}
+
+.icon {
+  width: 35px;
+  height: 35px;
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  background-color: lighten($brand-primary, 7%);;
+  color: $brand-white;
+  border: 3px solid $brand-white;
+  &:hover,
+  &:focus {
+    color: $brand-white;
+    background-color: $brand-primary;
+  }
+}
+
+// Thumbnail
+
+.thumb-sm{width:34px}
+.thumb{width:64px}
+.thumb-md{width:96px}
+.thumb-lg{width:128px}
+.thumb,
+.thumb-sm,
+.thumb-md,
+.thumb-lg {
+  display: inline-block;
+  //overflow: hidden;
+  img{
+    position: relative;
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+  }
+}
+
+// Positions
+
+.pos-rlt{position:relative}
+.pos-abt{position:absolute}
+.pos-fix{position:fixed}
+.pos-stc{position:static}
+
+.show{visibility:visible}
+.block{display:block}
+.block.hide{display:none}
+.inline{display:inline-block !important;}
+.hide{display:none}
+.clear{display:block;overflow:hidden;}
+
+.m-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+//  Border
+
+.b-none{border: none !important}
+.b{border: 1px solid $border-color}
+.b-t{border-top: 1px solid $border-color}
+.b-r{border-right: 1px solid $border-color}
+.b-b{border-bottom: 1px solid $border-color}
+.b-l{border-left: 1px solid $border-color}
+.b-v{
+  border-top: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
+}
+.b-h{
+  border-left: 1px solid $border-color;
+  border-right: 1px solid $border-color;
+}
+.b-a{border-color: rgba(255, 255, 255, 0.1)}
+
+.b-dashed{border-style: dashed !important}
+
+.b-2x{border-width: 2px}
+.b-3x{border-width: 3px}
+.b-4x{border-width: 4px}
+.b-5x{border-width: 5px}
+
+
+// Item
+
+.item {
+  position: relative;
+  height: 100%;
+  .top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+  .bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .center {
+    position: absolute;
+    top:50%;
+    left:0;
+    right: 0;
+    transform: translate(0, -50%);
+    &.screen{
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+  &-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    &.active,
+    .item:hover & {
+      display: block;
+    }
+  }
+  &.item-layer::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(red($brand-light), green($brand-light), blue($brand-light), 0.85);
+  }
+}
+
+// Box
+.box {
+  display: table;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+  border-spacing: 0;
+  .col {
+    display: table-cell;
+    float: none;
+    height: 100%;
+    vertical-align: top;
+    &.v-middle {vertical-align: middle !important;}
+    &.v-top {vertical-align: top !important;}
+    &.v-bottom {vertical-align: bottom !important;}
+  }
+}
+
+.vbox {
+  display: block;
+  table-layout: fixed;
+  height: 100%;
+  width: 100%;
+  border-spacing: 0;
+  .col {
+    float: none;
+    height: 100%;
+    vertical-align: top;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// Scrollable
+.scrollable {
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+// Progress Bar
+.progress {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 15px;
+  background-color: $brand-light;
+  border-radius: 50px;
+  overflow: visible;
+  box-shadow: none;
+  .title {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    color: #ffffff;
+    transform: translate(0%, -50%);
+    font-weight: 400;
+  }
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0px;
+  border-radius: 50px;
+  background-color: #e9e9e9;
+  box-shadow: none;
+}
+
+//Backgroung Images
+img{width:100%}
+.img-full{
+  width: 100%;
+  img{
+    width: 100%;
+  }
+}
+
+.img-bg {
+  position: relative;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  z-index: 0;
+  &.att-fixed {
+    background-attachment: fixed;
+  }
+}
+.img-bg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.img-bg > * {
+  position: relative;
+  z-index: 1;
+}
+.img-bg img {
+  z-index: 0;
+}
+
+// Cover
+.cover {
+  height: 820px;
+}

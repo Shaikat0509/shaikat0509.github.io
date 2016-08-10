@@ -1,0 +1,83 @@
+
+.navbar-nav {
+  text-align: center;
+  li {
+    a {
+
+    }
+  }
+    > .active {
+       > a {
+          color: $nav-active;
+          &:hover,
+          &:focus {
+            color: $nav-active;
+          }
+        }
+    }
+}
+
+.nav {
+  > li {
+    > a {
+      color: $brand-black;
+      // padding: 15px;
+      &:hover,
+      &:focus {
+        color: $nav-active;
+        background-color: transparent;
+      }
+    }
+  }
+  .open {
+    > a {
+      &,
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+  &.navbar-center {
+    @media screen and (min-width: 768px) {
+      position: relative;
+      display: table;
+      float: none;
+
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+
+  &.navbar-right {
+    margin-right: auto;
+  }
+}
+
+.nav-pills {
+  > li {
+    // Links rendered as pills
+    > a {
+      color: $brand-dark;
+      border-radius: $border-radius-base;
+      &:hover,
+      &:focus{
+        color: $nav-active;
+        background-color: lighten($brand-light, 7%);
+      }
+    }
+    // Active state
+    &.active > a {
+      &,
+      &:hover,
+      &:focus {
+        color: inherit;
+        background-color: $brand-light;
+        > .badge {
+          color: $brand-primary;
+        }
+      }
+    }
+
+  }
+}
